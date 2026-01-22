@@ -1,0 +1,21 @@
+{
+  "name": "",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "host": "astro dev --host"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.37.1",
+    "@catppuccin/starlight": "^1.0.2",
+    "astro": "^5.6.1",
+    "remark-block-containers": "^1.1.0",
+    "sharp": "^0.34.2",
+    "starlight-markdown-blocks": "^0.1.0"
+  }
+}
