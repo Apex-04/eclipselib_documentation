@@ -56,6 +56,10 @@ export default defineConfig({
               color: "blue",
               // icon: "",
             }),
+            codeblock: Aside({
+              label: "Example",
+              color: "purple",
+            }),
           },
         }),
       ],

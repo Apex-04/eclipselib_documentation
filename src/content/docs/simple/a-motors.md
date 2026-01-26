@@ -2,9 +2,13 @@
 title: Motor Objects (motor.rs)
 ---
 
-motor.rs has 2 objects that can be created,
+motor.rs adds a dedicated Motor gorup to allow the user to address multiple motors in 1 command, these motor groups are primarily used in the Drivetrain Objects but can also be used if you need 2 motors always doing the same thing. for example on a flywheel or an intake.
 
-- `AdvMotor`, which is an extension on the `vexide::motor` object that adds our op control and autonomous functions,
-- `MotorGroup`, which is multiple motors tied together for easy multi-motor subsystems
-
-Note: As of 0.2.1 eclipselib does not support 5.5 watt motor as a part of motors.rs, they still can be used however they may not exist within `AdvMotor` or `MotorGroup`
+:::codeblock
+```rust
+motor_group: vec![
+motor.new(/*motor definition*/),
+motor.new(/*motor definition*/)
+]
+```
+:::
