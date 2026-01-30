@@ -31,10 +31,10 @@ Calculates PID gains using Ziegler-Nichols tuning rules based on system characte
 :::codeblock
 **Example Usage:**
 ```rust
-use eclipselib::pid::*;// Determine ultimate gain and period through testing
-let ku = 2.5;  // System oscillates at gain of 2.5
-let tu = 0.3;  // Oscillation period is 0.3 seconds// Calculate gains for Classic PID (mode 4)
-let (kp, ki, kd) = calc_gains(ku, tu, 4);// Create controller with calculated gains
+use eclipselib::pid::*;
+let ku = 2.5;
+let tu = 0.3;
+let (kp, ki, kd) = calc_gains(ku, tu, 4);
 let mut controller = PIDController::set_gains(kp, ki, kd);
 controller.set_target(100.0);
 ```
@@ -84,7 +84,7 @@ Sets the desired setpoint value the controller should reach.
 
 :::codeblock
 ```rust
-pid.set_target(1000.0); // Set target to 1000 encoder ticks
+pid.set_target(1000.0);
 ```
 :::
 
@@ -111,7 +111,7 @@ Computes the control output for the current iteration based on the sensor readin
 loop {
 let position = motor.position()?.as_degrees();
 let output = pid.calculate(position);
-motor.set_voltage((output * 120.0) as i32)?; // Scale to millivoltssleep(Duration::from_millis(10)).await;
+motor.set_voltage((output * 120.0) as i32)?;
 }
 ```
 :::
@@ -131,7 +131,7 @@ Resets the controller's internal state (integral and previous error to 0).
 :::codeblock
 ```rust
 pid.set_target(500.0);
-pid.reset(); // Clear accumulated error from previous movement
+pid.reset();
 ```
 :::
 
